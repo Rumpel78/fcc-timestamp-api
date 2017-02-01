@@ -18,6 +18,10 @@ function getDates(unknownDateType){
   return { unix: date.getTime()/1000, natural: naturalDate }
 }
 
+
+
+app.use(express.static('public'));
+
 app.get('/:time', function (req, res) {
     var result = getDates(req.params.time)
     res.send(JSON.stringify(result));
