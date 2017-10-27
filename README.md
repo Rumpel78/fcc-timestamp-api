@@ -7,5 +7,17 @@
 * **User Story**: If it does, it returns both the Unix timestamp and the natural language form of that date.
 * **User Story**: If it does not contain a date or Unix timestamp, it returns null for those properties.
 
+### To run this app with docker:
+* Build image: `docker build -t rumpel78/timestamp .`
+* Run container: `docker run -p8080:8080 --name fcc_timestamp rumpel78/timestamp`  
+* Open in browser: http://localhost:8080
+* To remove the container run: `docker rm fcc_timestamp -f`
+
+### To run this app with nodejs and without docker:
+* Enter source directory: `cd src`
+* Install packages: `npm install`
+* Start nodjs server: `npm start`  
+* Open in browser: http://localhost:8080
+
 See the result under: https://timestamp.app.rzipa.at/  
 To take a look at the other projects go to https://app.rzipa.at
