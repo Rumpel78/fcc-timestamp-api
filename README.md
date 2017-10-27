@@ -7,6 +7,5 @@
 * **User Story**: If it does, it returns both the Unix timestamp and the natural language form of that date.
 * **User Story**: If it does not contain a date or Unix timestamp, it returns null for those properties.
 
-See the result under: https://timestamp.app.rzipa.at/
-
+See the result under: https://timestamp.app.rzipa.at/  
 To take a look at the other projects go to https://app.rzipa.at
