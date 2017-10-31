@@ -22,9 +22,9 @@ function getDates(unknownDateType) {
 app.set('view engine', 'pug');
 
 app.get('/', function (req, res) {
-    var baseUrl = req.protocol + ':' + port + '//' + req.host;
+    var baseUrl = req.protocol + '://' + req.hostname + ':' + port;
 
-    var mainDomain = req.host.substr(req.host.indexOf('.') + 1);
+    var mainDomain = req.hostname.substr(req.hostname.indexOf('.') + 1);
     var baseHome = req.protocol + '://' + mainDomain + ':' + port
 
     res.render('index', { host: baseUrl, home: baseHome });
