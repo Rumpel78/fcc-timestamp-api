@@ -1,6 +1,5 @@
 var express = require('express')
 var dateFormat = require('dateformat-light');
-var mainRouter = express.Router();
 
 var app = express()
 var port = process.env.VIRTUAL_PORT || 8080;
@@ -21,15 +20,13 @@ function getDates(unknownDateType) {
 
 app.set('view engine', 'pug');
 
-app.use(process.env.BASEPATH || '', mainRouter);
+var mainRouter = express.Router();
+var basePath = process.env.BASEPATH || '';
+app.use(basePath, mainRouter);
 
 mainRouter.get('/', function (req, res) {
-    var baseUrl = req.protocol + '://' + req.hostname + ':' + port;
-
-    var mainDomain = req.hostname.substr(req.hostname.indexOf('.') + 1);
-    var baseHome = req.protocol + '://' + mainDomain + ':' + port
-
-    res.render('index', { host: baseUrl, home: baseHome });
+    var baseUrl = req.protocol + '://' + req.hostname;
+    res.render('index', { baseUrl, basePath });
 });
 
 mainRouter.get('/:time', function (req, res) {
